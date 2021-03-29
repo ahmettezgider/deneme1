@@ -17,11 +17,13 @@ public class FeatureSteps {
     @When("user search for {string}")
     public void userSearchFor(String searchText) {
         $("div#search>input").shouldBe(Condition.appear).setValue(searchText).pressEnter();
+        System.out.println("user search for {string}");
     }
 
     @Then("the products should be appear")
     public void theProductsShouldBeAppear() {
         $("div#content>h1").shouldBe(Condition.appear);
+        System.out.println("the products should be appear");
         $$("div.product-layout").shouldHave(CollectionCondition.sizeGreaterThan(0));
     }
 }
