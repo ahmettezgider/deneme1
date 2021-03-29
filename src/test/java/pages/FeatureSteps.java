@@ -21,7 +21,7 @@ public class FeatureSteps {
 
     @Then("the products should be appear")
     public void theProductsShouldBeAppear() {
-        $("div#content>h1").shouldNotBe(Condition.appear);
+        $("div#content>h1").shouldBe(Condition.appear);
         $$("div.product-layout").shouldHave(CollectionCondition.sizeGreaterThan(0));
     }
 }
